@@ -3,61 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ACV SMP</title>
-
-    <style>
-    /* ===== BACKGROUND TOÀN WEB ===== */
-    html, body {
-        margin: 0;
-        padding: 0;
-        min-height: 100%;
-    }
-
-    body {
-        background-image: url("ACV_SMP.png");
-        background-size: cover;        /* Phủ toàn màn hình */
-        background-position: center;   /* Căn giữa */
-        background-repeat: no-repeat;  /* Không lặp */
-        background-attachment: fixed;  /* Cuộn trang vẫn đứng yên */
-        font-family: Arial, sans-serif;
-    }
-
-    /* Lớp phủ tối để chữ dễ đọc */
-    body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.45);
-        z-index: -1;
-    }
-
-    /* ===== NAV ===== */
-    nav {
-        margin-bottom: 10px;
-    }
-
-    nav a button {
-        width: 110px;
-        height: 35px;
-        margin-right: 5px;
-        cursor: pointer;
-        font-size: 14px;
-    }
-
-    nav a button:disabled {
-        opacity: 0.6;
-        cursor: default;
-    }
-
-    /* Chữ sáng hơn trên nền tối */
-    h1, h2, h3, p {
-        color: #ffffff;
-    }
-
-    button {
-        padding: 6px 10px;
-        cursor: pointer;
-    }
-</style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -157,6 +103,7 @@
 
 </body>
 </html>
+
 
 
 
