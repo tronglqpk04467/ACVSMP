@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>ACV SMP</title>
-<style>
-    nav {
-        margin-bottom: 10px;
-    }
 
-    nav a button {
-        width: 110px;      /* ÉP chiều ngang bằng nhau */
-        height: 35px;      /* ÉP chiều cao */
-        margin-right: 5px;
-        cursor: pointer;
-        font-size: 14px;
-    }
+    <style>
+        nav {
+            margin-bottom: 10px;
+        }
 
-    nav a button:disabled {
-        opacity: 0.6;
-        cursor: default;
-    }
-</style>
+        nav a button {
+            width: 110px;
+            height: 35px;
+            margin-right: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        nav a button:disabled {
+            opacity: 0.6;
+            cursor: default;
+        }
+    </style>
 </head>
 
 <body>
@@ -43,7 +44,10 @@
     <h2>IP Server</h2>
     <p>Nhấn nút bên dưới để copy IP server</p>
 
-    <button onclick="copyIP()">Copy IP</button>
+    <button onclick="copyJavaIP()">Copy IP Minecraft Java</button>
+    <br><br>
+    <button onclick="copyBedrockIP()">Copy IP Minecraft Bedrock</button>
+
     <p id="status"></p>
 </main>
 
@@ -69,7 +73,7 @@
 
     <p>
         Gmail:
-        <button onclick="copyGmail()">Copy gmail</button>
+        <button onclick="copyGmail()">Copy Gmail</button>
     </p>
 
     <p id="gmailStatus"></p>
@@ -77,17 +81,25 @@
 
 <!-- ===== SCRIPT ===== -->
 <script>
-    function copyIP() {
-        const ip = "acvsmp.mine.vn";
+    function copyJavaIP() {
+        const ip = "uk-lists.gl.joinmc.link";
         navigator.clipboard.writeText(ip);
 
         const status = document.getElementById("status");
-        status.innerText = "✅ Đã copy IP: " + ip;
+        status.innerText = "✅ Đã copy IP Java: " + ip;
 
-        // Ẩn sau 2 giây
-        setTimeout(() => {
-            status.innerText = "";
-        }, 2000);
+        setTimeout(() => status.innerText = "", 2000);
+    }
+
+    function copyBedrockIP() {
+        const ip = "songs-slightly.gl.at.ply.gg";
+        const port = "62243";
+        navigator.clipboard.writeText(ip + ":" + port);
+
+        const status = document.getElementById("status");
+        status.innerText = "✅ Đã copy IP Bedrock: " + ip + ":" + port;
+
+        setTimeout(() => status.innerText = "", 2000);
     }
 
     function copyGmail() {
@@ -95,15 +107,12 @@
         navigator.clipboard.writeText(gmail);
 
         const gmailStatus = document.getElementById("gmailStatus");
-        gmailStatus.innerText = "✅ Đã copy gmail: " + gmail;
+        gmailStatus.innerText = "✅ Đã copy Gmail: " + gmail;
 
-        // Ẩn sau 2 giây
-        setTimeout(() => {
-            gmailStatus.innerText = "";
-        }, 2000);
+        setTimeout(() => gmailStatus.innerText = "", 2000);
     }
 </script>
 
-
 </body>
 </html>
+
