@@ -1,58 +1,58 @@
 /* ================= RESET ================= */
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 html, body {
-    margin: 0;
-    padding: 0;
     min-height: 100%;
 }
 
 /* ================= BACKGROUND ================= */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background: url("ACV_SMP.png") no-repeat center center fixed;
     background-size: cover;
-    color: #fff;
+    color: #ffffff;
 }
 
-/* Overlay tối nhẹ */
+/* phủ tối nhẹ cho dễ đọc chữ */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.2);
-    z-index: -2;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: -5;
 }
 
 /* ================= HEADER ================= */
 header {
     text-align: center;
-    padding: 30px 10px 15px;
+    padding: 30px 10px 20px;
 }
 
 header h1 {
     font-size: 36px;
     margin-bottom: 15px;
-    text-shadow: 0 0 12px #ff9fd6;
+    text-shadow: 0 0 10px #ff9fd6;
 }
 
 /* ================= NAV ================= */
 nav {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 nav a button {
     width: 120px;
     height: 36px;
-    margin: 0 4px;
+    margin: 0 5px;
     font-size: 14px;
     font-weight: bold;
     border-radius: 8px;
     border: none;
     cursor: pointer;
-    background: #fff;
+    background: #ffffff;
 }
 
 nav a button:disabled {
@@ -60,30 +60,36 @@ nav a button:disabled {
     cursor: default;
 }
 
-/* ================= GLASS / RULE BOX ================= */
-.glass-box,
-.rules-box {
+/* ================= MAIN ================= */
+main {
+    padding-bottom: 50px;
+}
+
+/* ================= GLASS BOX ================= */
+.glass-box {
     position: relative;
     max-width: 1000px;
     margin: 35px auto;
-    padding: 28px 32px;
+    padding: 30px 35px;
     border-radius: 18px;
+    overflow: hidden;
 
+    /* NỀN TRONG SUỐT */
     background: rgba(0, 0, 0, 0.18);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    z-index: 1;
 }
 
-/* ================= VIỀN 7 SẮC ================= */
-.glass-box::before,
-.rules-box::before {
+/* ================= VIỀN RGB 7 SẮC ================= */
+.glass-box::before {
     content: "";
     position: absolute;
     inset: -3px;
     border-radius: 22px;
-
     background: linear-gradient(
-        270deg,
+        90deg,
         red,
         orange,
         yellow,
@@ -93,15 +99,13 @@ nav a button:disabled {
         violet,
         red
     );
-    background-size: 500% 500%;
-    animation: rgbBorder 10s linear infinite;
-
-    z-index: -1;
+    background-size: 400% 400%;
+    animation: rgbBorder 6s linear infinite;
+    z-index: -2;
 }
 
-/* Lớp nền trong để viền sắc nét */
-.glass-box::after,
-.rules-box::after {
+/* lớp che trong để viền gọn */
+.glass-box::after {
     content: "";
     position: absolute;
     inset: 2px;
@@ -111,28 +115,31 @@ nav a button:disabled {
 }
 
 /* ================= TEXT ================= */
-.glass-box h2,
-.rules-box h2 {
+.glass-box h2 {
     text-align: center;
     color: #ffb7e3;
+    margin-bottom: 25px;
+}
+
+.update {
     margin-bottom: 22px;
 }
 
 .update h3 {
     color: #ffd1ec;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
-ul, ol {
+ul {
     padding-left: 22px;
 }
 
 li {
-    margin-bottom: 8px;
     line-height: 1.6;
+    margin-bottom: 6px;
 }
 
-/* ================= ANIMATION ================= */
+/* ================= RGB ANIMATION ================= */
 @keyframes rgbBorder {
     0%   { background-position: 0% 50%; }
     50%  { background-position: 100% 50%; }
@@ -141,13 +148,16 @@ li {
 
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
+    header h1 {
+        font-size: 28px;
+    }
+
     nav a button {
         width: 100px;
         font-size: 13px;
     }
 
-    .glass-box,
-    .rules-box {
+    .glass-box {
         margin: 20px 10px;
         padding: 22px;
     }
