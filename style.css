@@ -1,150 +1,104 @@
-/* ================================================= */
-/* ================= RESET + BODY ================== */
-/* ================================================= */
+/* ===== RESET ===== */
 * {
-    box-sizing: border-box;
-}
-
-html, body {
     margin: 0;
     padding: 0;
-    min-height: 100%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+/* ===== BODY ===== */
 body {
-    font-family: Arial, sans-serif;
-    color: #ffffff;
-
-    background-image: url("ACV_SMP.png");
+    background: url("background.jpg") no-repeat center center fixed;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    color: #fff;
 }
 
-/* ================================================= */
-/* ================= LỚP TỐI PHỦ NỀN ================ */
-/* ================================================= */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.25);
-    z-index: 0;
-}
-
-/* Đảm bảo nội dung nổi trên nền */
-header, main, footer {
-    position: relative;
-    z-index: 1;
-}
-
-/* ================================================= */
-/* ================= HEADER + NAV ================== */
-/* ================================================= */
+/* ===== HEADER ===== */
 header {
-    padding: 20px;
     text-align: center;
+    padding: 30px 10px 15px;
 }
 
+header h1 {
+    font-size: 36px;
+    text-shadow: 0 0 10px #ff9acb;
+    margin-bottom: 15px;
+}
+
+/* ===== NAV ===== */
 nav {
-    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 nav a button {
-    width: 120px;
-    height: 36px;
-    margin: 4px;
-
+    padding: 8px 18px;
+    margin: 0 5px;
     border: none;
-    border-radius: 8px;
-
-    font-size: 14px;
-    font-weight: bold;
+    border-radius: 12px;
     cursor: pointer;
+    background: rgba(255, 255, 255, 0.85);
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+nav a button:hover:not(:disabled) {
+    background: #ff9acb;
+    color: #000;
 }
 
 nav a button:disabled {
-    opacity: 0.7;
+    opacity: 0.6;
     cursor: default;
 }
 
-/* ================================================= */
-/* ================= TEXT =========================== */
-/* ================================================= */
-h1, h2, h3, p, li {
-    color: #ffffff;
+/* ===== MAIN ===== */
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
 }
 
-/* ================================================= */
-/* ================= GLASS BOX ====================== */
-/* ================================================= */
-.rules-box,
-.glass-box {
-    position: relative;
-    z-index: 2;
-
-    max-width: 1000px;
-    margin: 60px auto;
+/* ===== RULES BOX ===== */
+.rules-box {
+    width: 85%;
+    max-width: 900px;
     padding: 30px;
 
-    background: rgba(0, 0, 0, 0.65);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    /* NỀN TRONG SUỐT */
+    background: rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(4px);
 
-    border: 4px solid #ff8fd1;
-    border-radius: 16px;
-
-    box-shadow:
-        0 0 30px rgba(255, 150, 210, 0.9),
-        0 0 70px rgba(255, 150, 210, 0.4);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 160, 200, 0.6);
+    box-shadow: 0 0 25px rgba(255, 150, 200, 0.5);
 }
 
-.rules-box h2,
-.glass-box h2 {
+/* ===== TITLE ===== */
+.rules-box h2 {
     text-align: center;
-    color: #ffb7e3;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
+    color: #ffb6d9;
+    text-shadow: 0 0 6px #ff7fbf;
 }
 
-/* ================================================= */
-/* ================= LIST =========================== */
-/* ================================================= */
-.rules-box ol,
-.glass-box ul {
-    padding-left: 22px;
+/* ===== LIST ===== */
+.rules-box ol {
+    padding-left: 20px;
 }
 
-.rules-box li,
-.glass-box li {
-    margin-bottom: 8px;
+.rules-box li {
+    margin-bottom: 10px;
     line-height: 1.6;
 }
 
-/* ================================================= */
-/* ================= UPDATE BLOCK ================== */
-/* ================================================= */
-.update {
-    margin-bottom: 22px;
-}
-
-.update h3 {
-    color: #ffd1ec;
-    margin-bottom: 6px;
-}
-
-/* ================================================= */
-/* ================= MOBILE ======================== */
-/* ================================================= */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-    nav a button {
-        width: 100px;
-        font-size: 13px;
+    header h1 {
+        font-size: 26px;
     }
 
-    .rules-box,
-    .glass-box {
-        margin: 25px 12px;
-        padding: 22px;
+    .rules-box {
+        width: 95%;
+        padding: 20px;
     }
 }
