@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>ACV SMP</title>
+<style>
+    nav {
+        margin-bottom: 10px;
+    }
+
+    nav a button {
+        width: 110px;      /* ÉP chiều ngang bằng nhau */
+        height: 35px;      /* ÉP chiều cao */
+        margin-right: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    nav a button:disabled {
+        opacity: 0.6;
+        cursor: default;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <h1>Trang chủ ACV SMP</h1>
+
+    <nav>
+        <a href="index.html"><button disabled>Trang chủ</button></a>
+        <a href="donate.html"><button>Donate</button></a>
+        <a href="capnhat.html"><button>Cập nhật</button></a>
+    </nav>
+
+    <hr>
+</header>
+
+<!-- ===== MAIN ===== -->
+<main>
+    <h2>IP Server</h2>
+    <p>Nhấn nút bên dưới để copy IP server</p>
+
+    <button onclick="copyIP()">Copy IP</button>
+    <p id="status"></p>
+</main>
+
+<hr>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <h3>Liên hệ</h3>
+
+    <p>
+        Discord:
+        <a href="https://discord.gg/kcWRx3Hbz6" target="_blank">
+            <button>Discord</button>
+        </a>
+    </p>
+
+    <p>
+        Nhóm Facebook:
+        <a href="https://www.facebook.com/share/g/1CiEc79W4W/" target="_blank">
+            <button>Facebook</button>
+        </a>
+    </p>
+
+    <p>
+        Gmail:
+        <button onclick="copyGmail()">Copy gmail</button>
+    </p>
+
+    <p id="gmailStatus"></p>
+</footer>
+
+<!-- ===== SCRIPT ===== -->
+<script>
+    function copyIP() {
+        const ip = "acvsmp.mine.vn";
+        navigator.clipboard.writeText(ip);
+
+        const status = document.getElementById("status");
+        status.innerText = "✅ Đã copy IP: " + ip;
+
+        // Ẩn sau 2 giây
+        setTimeout(() => {
+            status.innerText = "";
+        }, 2000);
+    }
+
+    function copyGmail() {
+        const gmail = "luuquangtrong492007@gmail.com";
+        navigator.clipboard.writeText(gmail);
+
+        const gmailStatus = document.getElementById("gmailStatus");
+        gmailStatus.innerText = "✅ Đã copy gmail: " + gmail;
+
+        // Ẩn sau 2 giây
+        setTimeout(() => {
+            gmailStatus.innerText = "";
+        }, 2000);
+    }
+</script>
+
+
+</body>
+</html>
