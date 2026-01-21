@@ -1,4 +1,10 @@
-/* ===== RESET + BACKGROUND ===== */
+/* ================================================= */
+/* ================= RESET + BODY ================== */
+/* ================================================= */
+* {
+    box-sizing: border-box;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -7,40 +13,55 @@ html, body {
 
 body {
     font-family: Arial, sans-serif;
-    background: url("ACV_SMP.png") no-repeat center center fixed;
+    color: #ffffff;
+
+    background-image: url("ACV_SMP.png");
     background-size: cover;
-    color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-/* ===== LỚP TỐI PHỦ NỀN ===== */
+/* ================================================= */
+/* ================= LỚP TỐI PHỦ NỀN ================ */
+/* ================================================= */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.35); /* vừa đủ nổi chữ */
-    z-index: -1; /* FIX: không đè nội dung */
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 0;
 }
 
-/* ===== HEADER / MAIN ===== */
+/* Đảm bảo nội dung nổi trên nền */
 header, main, footer {
     position: relative;
     z-index: 1;
 }
 
-/* ===== NAV ===== */
+/* ================================================= */
+/* ================= HEADER + NAV ================== */
+/* ================================================= */
+header {
+    padding: 20px;
+    text-align: center;
+}
+
 nav {
-    margin-bottom: 15px;
+    margin-top: 10px;
 }
 
 nav a button {
     width: 120px;
     height: 36px;
-    margin-right: 6px;
-    font-size: 14px;
-    border-radius: 8px;
+    margin: 4px;
+
     border: none;
-    cursor: pointer;
+    border-radius: 8px;
+
+    font-size: 14px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 nav a button:disabled {
@@ -48,37 +69,47 @@ nav a button:disabled {
     cursor: default;
 }
 
-/* ===== TEXT ===== */
+/* ================================================= */
+/* ================= TEXT =========================== */
+/* ================================================= */
 h1, h2, h3, p, li {
     color: #ffffff;
 }
 
 /* ================================================= */
-/* =============== GLASS BOX (LUẬT + CẬP NHẬT) ====== */
+/* ================= GLASS BOX ====================== */
 /* ================================================= */
-
 .rules-box,
 .glass-box {
-    max-width: 1000px;
-    margin: 35px auto;
-    padding: 25px 30px;
-    background: rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    position: relative;
+    z-index: 2;
 
-    border: 3px solid #ff9fd6;
-    border-radius: 14px;
-    box-shadow: 0 0 25px rgba(255, 159, 214, 0.5);
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 30px;
+
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border: 4px solid #ff8fd1;
+    border-radius: 16px;
+
+    box-shadow:
+        0 0 30px rgba(255, 150, 210, 0.9),
+        0 0 70px rgba(255, 150, 210, 0.4);
 }
 
 .rules-box h2,
 .glass-box h2 {
     text-align: center;
     color: #ffb7e3;
-    margin-bottom: 22px;
+    margin-bottom: 24px;
 }
 
-/* ===== LIST ===== */
+/* ================================================= */
+/* ================= LIST =========================== */
+/* ================================================= */
 .rules-box ol,
 .glass-box ul {
     padding-left: 22px;
@@ -90,9 +121,11 @@ h1, h2, h3, p, li {
     line-height: 1.6;
 }
 
-/* ===== UPDATE BLOCK (cho trang Cập nhật) ===== */
+/* ================================================= */
+/* ================= UPDATE BLOCK ================== */
+/* ================================================= */
 .update {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .update h3 {
@@ -100,7 +133,9 @@ h1, h2, h3, p, li {
     margin-bottom: 6px;
 }
 
-/* ===== MOBILE ===== */
+/* ================================================= */
+/* ================= MOBILE ======================== */
+/* ================================================= */
 @media (max-width: 768px) {
     nav a button {
         width: 100px;
@@ -109,7 +144,7 @@ h1, h2, h3, p, li {
 
     .rules-box,
     .glass-box {
-        margin: 20px 10px;
-        padding: 20px;
+        margin: 25px 12px;
+        padding: 22px;
     }
 }
