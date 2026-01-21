@@ -88,18 +88,21 @@
         const status = document.getElementById("status");
         status.innerText = "✅ Đã copy IP Java: " + ip;
 
-        setTimeout(() => status.innerText = "", 2000);
+        setTimeout(() => {
+            status.innerText = "";
+        }, 2000);
     }
 
     function copyBedrockIP() {
-        const ip = "songs-slightly.gl.at.ply.gg";
-        const port = "62243";
-        navigator.clipboard.writeText(ip + ":" + port);
+        const text = "songs-slightly.gl.at.ply.gg\npost: 62243";
+        navigator.clipboard.writeText(text);
 
         const status = document.getElementById("status");
-        status.innerText = "✅ Đã copy IP Bedrock: " + ip + ":" + port;
+        status.innerText = "✅ Đã copy IP Bedrock (đúng định dạng)";
 
-        setTimeout(() => status.innerText = "", 2000);
+        setTimeout(() => {
+            status.innerText = "";
+        }, 2000);
     }
 
     function copyGmail() {
@@ -109,10 +112,14 @@
         const gmailStatus = document.getElementById("gmailStatus");
         gmailStatus.innerText = "✅ Đã copy Gmail: " + gmail;
 
-        setTimeout(() => gmailStatus.innerText = "", 2000);
+        setTimeout(() => {
+            gmailStatus.innerText = "";
+        }, 2000);
     }
 </script>
 
+
 </body>
 </html>
+
 
