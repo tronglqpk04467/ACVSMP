@@ -1,192 +1,48 @@
-/* ================================================= */
-/* ================= RESET ========================= */
-/* ================================================= */
-* {
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>ACV SMP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-html, body {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-}
+<body>
 
-/* ================================================= */
-/* ================= BACKGROUND ==================== */
-/* ================================================= */
-body {
-    background-image: url("ACV_SMP.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-family: Arial, sans-serif;
-}
+<header>
+    <h1>Luật ACV SMP</h1>
 
-/* ================================================= */
-/* ================= OVERLAY ======================= */
-/* ================================================= */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.25);
-    z-index: 0;
-}
+    <nav>
+        <a href="index.html"><button>Trang chủ</button></a>
+        <a href="donate.html"><button>Donate</button></a>
+        <a href="capnhat.html"><button>Cập nhật</button></a>
+        <a href="luat.html"><button disabled>Luật</button></a>
+    </nav>
+</header>
 
-/* ================================================= */
-/* ================= LAYER CONTENT ================= */
-/* ================================================= */
-header, main, footer {
-    position: relative;
-    z-index: 1;
-}
+<main>
+    <!-- 🔴 BẮT BUỘC PHẢI CÓ glass-box -->
+    <div class="glass-box">
+        <h2>LUẬT ACV SMP (CHÍNH THỨC)</h2>
 
-/* ================================================= */
-/* ================= HEADER ======================== */
-/* ================================================= */
-header {
-    padding: 15px;
-}
+        <ol>
+            <li>Cấm phá hoại công trình, cướp base người khác.</li>
+            <li>Mỗi người tự lập địa bàn riêng.</li>
+            <li>Cấm Xray, hack, cheat dưới mọi hình thức → ban vĩnh viễn.</li>
+            <li>Chat tục, toxic: nhắc nhở tối đa 3 lần → giam + sổ thù vặt.</li>
+            <li>Cấm xúc phạm, lăng mạ, phân biệt vùng miền.</li>
+            <li>Được dùng auto click.</li>
+            <li>Không quảng cáo IP server cho người ngoài ACV SMP.</li>
+            <li>Cấm Spawn Kill.</li>
+            <li>Cấm lạm dụng bug, exploit.</li>
+            <li>Cấm gây lag server.</li>
+            <li>Cấm cho AI chơi hộ.</li>
+            <li>Cấm xây trap hại người khác.</li>
+            <li>Chỉ gửi link YouTube / TikTok liên quan ACV SMP.</li>
+            <li>Tôn trọng mọi thành viên.</li>
+            <li>Vi phạm nặng có thể bị ban thẳng.</li>
+        </ol>
+    </div>
+</main>
 
-h1 {
-    margin: 0 0 10px;
-}
-
-/* ================================================= */
-/* ================= NAV =========================== */
-/* ================================================= */
-nav {
-    margin-bottom: 15px;
-}
-
-nav a {
-    text-decoration: none;
-}
-
-nav a button {
-    width: 120px;
-    height: 38px;
-    margin-right: 6px;
-    font-size: 14px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-nav a button:disabled {
-    opacity: 0.6;
-    cursor: default;
-}
-
-/* ================================================= */
-/* ================= TEXT ========================== */
-/* ================================================= */
-h1, h2, h3, p, li {
-    color: #ffffff;
-}
-
-/* ================================================= */
-/* ================= BUTTON ======================== */
-/* ================================================= */
-button {
-    padding: 6px 10px;
-    cursor: pointer;
-}
-
-/* ================================================= */
-/* ================= MAIN LAYOUT =================== */
-/* ================================================= */
-/* Tự động xử lý 1 hoặc nhiều glass-box */
-main {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 10px;
-}
-
-/* ================================================= */
-/* ================= GLASS BOX ===================== */
-/* ================================================= */
-.glass-box {
-    flex: 1 1 45%;
-    max-width: 48%;
-    min-width: 300px;
-
-    padding: 25px 30px;
-    background: rgba(0, 0, 0, 0.55);
-    border: 3px solid #ff9fd6;
-    border-radius: 14px;
-    box-shadow: 0 0 25px rgba(255, 159, 214, 0.4);
-
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-}
-
-.glass-box h2 {
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 20px;
-    color: #ffb7e3;
-}
-
-.glass-box ol,
-.glass-box ul {
-    padding-left: 22px;
-}
-
-.glass-box li {
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-
-/* ================================================= */
-/* ================= MOBILE ======================== */
-/* ================================================= */
-@media (max-width: 768px) {
-
-    /* chữ to hơn */
-    h1 {
-        font-size: 26px;
-    }
-
-    h2 {
-        font-size: 22px;
-    }
-
-    h3 {
-        font-size: 20px;
-    }
-
-    p, li {
-        font-size: 16px;
-    }
-
-    /* nav dễ bấm */
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-
-    nav a button {
-        width: 48%;
-        height: 46px;
-        font-size: 16px;
-    }
-
-    button {
-        font-size: 16px;
-        padding: 10px 12px;
-    }
-
-    /* main + box mobile */
-    main {
-        flex-direction: column;
-    }
-
-    .glass-box {
-        max-width: 100%;
-        flex: 1 1 100%;
-        padding: 20px;
-    }
-}
+</body>
+</html>
