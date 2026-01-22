@@ -95,7 +95,6 @@ button {
 /* ================================================= */
 /* ================= MAIN LAYOUT =================== */
 /* ================================================= */
-/* Tự động xử lý 1 hoặc nhiều glass-box */
 main {
     display: flex;
     flex-wrap: wrap;
@@ -135,8 +134,35 @@ main {
 }
 
 .glass-box li {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     line-height: 1.6;
+}
+
+/* ================================================= */
+/* ================= UPDATE BOX ==================== */
+/* ================================================= */
+.update {
+    margin-top: 20px;
+    padding: 15px 18px;
+    background: rgba(255, 255, 255, 0.08);
+    border-left: 4px solid #ff9fd6;
+    border-radius: 8px;
+}
+
+.update h3 {
+    margin: 0 0 10px;
+    color: #ffd1ec;
+    font-size: 18px;
+}
+
+.update ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.update li {
+    margin-bottom: 6px;
+    line-height: 1.5;
 }
 
 /* ================================================= */
@@ -179,7 +205,6 @@ main {
         padding: 10px 12px;
     }
 
-    /* main + box mobile */
     main {
         flex-direction: column;
     }
@@ -188,5 +213,13 @@ main {
         max-width: 100%;
         flex: 1 1 100%;
         padding: 20px;
+    }
+
+    .update {
+        padding: 14px;
+    }
+
+    .update h3 {
+        font-size: 17px;
     }
 }
