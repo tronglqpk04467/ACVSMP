@@ -1,97 +1,47 @@
-/* ================================================= */
-/* =============== GLASS BOX (LUẬT + CẬP NHẬT) ====== */
-/* ================================================= */
+/* ===== RESET ===== */
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
 
-.rules-box,
-.glass-box {
+/* ===== BACKGROUND ===== */
+body {
+    font-family: Arial, sans-serif;
+    background: url("ACV_SMP.png") no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
     position: relative;
-    max-width: 1000px;
-    margin: 35px auto;
-    padding: 25px 30px;
-    border-radius: 16px;
-    overflow: hidden;
-
-    /* nền trong suốt */
-    background: rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-
-    /* bỏ viền cũ */
-    border: none;
-    box-shadow: none;
-
-    z-index: 1;
 }
 
-/* ===== VIỀN 7 SẮC ===== */
-.rules-box::before,
-.glass-box::before {
+/* ===== LỚP PHỦ CHUNG (PC) ===== */
+body::before {
     content: "";
-    position: absolute;
-    inset: -3px;
-    border-radius: 18px;
-
-    background: linear-gradient(
-        90deg,
-        red,
-        orange,
-        yellow,
-        lime,
-        cyan,
-        blue,
-        violet,
-        red
-    );
-    background-size: 400% 400%;
-    animation: rgbBorder 8s linear infinite;
-
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45); /* PC vừa */
     z-index: -1;
 }
 
-/* lớp che trong để viền không tràn */
-.rules-box::after,
-.glass-box::after {
-    content: "";
-    position: absolute;
-    inset: 2px;
-    border-radius: 14px;
-    background: rgba(0, 0, 0, 0.55);
-    z-index: -1;
+/* ================================================= */
+/* =============== MOBILE FIX PNG TRẮNG ============= */
+/* ================================================= */
+@media (max-width: 768px) {
+    body::before {
+        background: rgba(0, 0, 0, 0.65); /* ĐT tối hơn */
+        backdrop-filter: brightness(0.85);
+        -webkit-backdrop-filter: brightness(0.85);
+    }
+
+    body {
+        background-position: center top; /* tránh vùng trắng */
+    }
 }
 
-/* ===== TITLE ===== */
-.rules-box h2,
-.glass-box h2 {
-    text-align: center;
-    color: #ffb7e3;
-    margin-bottom: 22px;
-}
-
-/* ===== LIST ===== */
-.rules-box ol,
-.glass-box ul {
-    padding-left: 22px;
-}
-
-.rules-box li,
-.glass-box li {
-    margin-bottom: 8px;
-    line-height: 1.6;
-}
-
-/* ===== UPDATE BLOCK ===== */
-.update {
-    margin-bottom: 20px;
-}
-
-.update h3 {
-    color: #ffd1ec;
-    margin-bottom: 6px;
-}
-
-/* ===== RGB ANIMATION ===== */
-@keyframes rgbBorder {
-    0%   { background-position: 0% 50%; }
-    50%  { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* ===== ĐT RẤT NHỎ ===== */
+@media (max-width: 480px) {
+    body::before {
+        background: rgba(0, 0, 0, 0.75); /* tối mạnh */
+        backdrop-filter: brightness(0.8);
+    }
 }
