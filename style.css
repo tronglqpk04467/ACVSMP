@@ -1,11 +1,19 @@
-/* ================= RESET ================= */
+/* ================================================= */
+/* ================= RESET ========================= */
+/* ================================================= */
+* {
+    box-sizing: border-box;
+}
+
 html, body {
     margin: 0;
     padding: 0;
     min-height: 100%;
 }
 
-/* ================= BACKGROUND ================= */
+/* ================================================= */
+/* ================= BACKGROUND ==================== */
+/* ================================================= */
 body {
     background-image: url("ACV_SMP.png");
     background-size: cover;
@@ -14,7 +22,9 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* ================= LỚP TỐI PHỦ NỀN ================= */
+/* ================================================= */
+/* ================= OVERLAY ======================= */
+/* ================================================= */
 body::before {
     content: "";
     position: fixed;
@@ -23,24 +33,43 @@ body::before {
     z-index: 0;
 }
 
-/* ================= ĐẨY NỘI DUNG LÊN ================= */
+/* ================================================= */
+/* ================= LAYER CONTENT ================= */
+/* ================================================= */
 header, main, footer {
     position: relative;
     z-index: 1;
 }
 
-/* ================= NAV ================= */
+/* ================================================= */
+/* ================= HEADER ======================== */
+/* ================================================= */
+header {
+    padding: 15px;
+}
+
+h1 {
+    margin: 0 0 10px;
+}
+
+/* ================================================= */
+/* ================= NAV =========================== */
+/* ================================================= */
 nav {
     margin-bottom: 15px;
 }
 
+nav a {
+    text-decoration: none;
+}
+
 nav a button {
     width: 120px;
-    height: 36px;
+    height: 38px;
     margin-right: 6px;
-    cursor: pointer;
     font-size: 14px;
     border-radius: 6px;
+    cursor: pointer;
 }
 
 nav a button:disabled {
@@ -48,58 +77,74 @@ nav a button:disabled {
     cursor: default;
 }
 
-/* ================= TEXT ================= */
+/* ================================================= */
+/* ================= TEXT ========================== */
+/* ================================================= */
 h1, h2, h3, p, li {
     color: #ffffff;
 }
 
-/* ================= BUTTON ================= */
+/* ================================================= */
+/* ================= BUTTON ======================== */
+/* ================================================= */
 button {
     padding: 6px 10px;
     cursor: pointer;
 }
 
 /* ================================================= */
-/* ================= KHUNG LUẬT ==================== */
+/* ================= MAIN LAYOUT =================== */
 /* ================================================= */
+/* Tự động xử lý 1 hoặc nhiều glass-box */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+}
 
-.rules-box {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 25px;
+/* ================================================= */
+/* ================= GLASS BOX ===================== */
+/* ================================================= */
+.glass-box {
+    flex: 1 1 45%;
+    max-width: 48%;
+    min-width: 300px;
+
+    padding: 25px 30px;
     background: rgba(0, 0, 0, 0.55);
     border: 3px solid #ff9fd6;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(255, 159, 214, 0.4);
+    border-radius: 14px;
+    box-shadow: 0 0 25px rgba(255, 159, 214, 0.4);
+
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 }
 
-.rules-box h2 {
+.glass-box h2 {
     text-align: center;
-    color: #ffb7e3;
+    margin-top: 0;
     margin-bottom: 20px;
+    color: #ffb7e3;
 }
 
-.rules-box ol {
+.glass-box ol,
+.glass-box ul {
     padding-left: 22px;
 }
 
-.rules-box li {
+.glass-box li {
     margin-bottom: 10px;
     line-height: 1.6;
 }
 
 /* ================================================= */
-/* ================= MOBILE FIX ==================== */
+/* ================= MOBILE ======================== */
 /* ================================================= */
-
 @media (max-width: 768px) {
 
-    /* FIX nền PNG cho mobile */
-    body {
-        background-position: top center;
-    }
-
-    /* Chữ to hơn */
+    /* chữ to hơn */
     h1 {
         font-size: 26px;
     }
@@ -116,7 +161,7 @@ button {
         font-size: 16px;
     }
 
-    /* NAV dễ bấm */
+    /* nav dễ bấm */
     nav {
         display: flex;
         flex-wrap: wrap;
@@ -125,24 +170,23 @@ button {
 
     nav a button {
         width: 48%;
-        height: 44px;
+        height: 46px;
         font-size: 16px;
     }
 
-    /* Button chung */
     button {
         font-size: 16px;
         padding: 10px 12px;
     }
 
-    /* Padding nội dung */
-    header, main, footer {
-        padding: 10px;
+    /* main + box mobile */
+    main {
+        flex-direction: column;
     }
 
-    /* Khung luật mobile */
-    .rules-box {
-        margin: 20px 10px;
-        padding: 18px;
+    .glass-box {
+        max-width: 100%;
+        flex: 1 1 100%;
+        padding: 20px;
     }
 }
